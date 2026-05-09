@@ -3,120 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas | Scientific Data Visualization</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@200;700&family=Public+Sans:wght@100;400;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #020617;
-            --accent: #38bdf8;
-        }
-        body {
-            background-color: var(--bg);
-            color: #94a3b8;
-            font-family: 'Public Sans', sans-serif;
-            overflow-x: hidden;
-        }
-        .mono {
-            font-family: 'Chivo Mono', monospace;
-        }
-        .grid-bg {
-            background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .data-point {
-            width: 4px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
-        }
-        .border-tech {
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-    </style>
+    <title>Atlas DataViz | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="grid-bg">
-    <nav class="p-8 border-b border-sky-900/30 flex justify-between items-center backdrop-blur-xl">
-        <div class="flex items-center gap-4">
-            <div class="w-10 h-10 border-2 border-sky-500 flex items-center justify-center">
-                <div class="w-2 h-2 bg-sky-500"></div>
-            </div>
-            <span class="text-white font-black uppercase tracking-[0.4em] text-sm">Atlas.Studio</span>
-        </div>
-        <div class="mono text-[10px] uppercase tracking-widest text-sky-500/50">System Status: Active // 2026.04</div>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Atlas<span>.Studio</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="studio.html">Studio</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="docs.html">Docs</a></li>
+        </ul>
+        <a href="studio.html" class="btn-nav">Open Studio</a>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
     </nav>
 
-    <main>
-        <section class="py-32 px-10 relative">
-            <div class="absolute top-20 right-20 w-96 h-96 bg-sky-500/10 rounded-full blur-[120px]"></div>
-            
-            <div class="max-w-6xl mx-auto">
-                <div class="mono text-xs text-sky-500 mb-8 uppercase tracking-widest flex items-center gap-2">
-                    <span class="inline-block w-4 h-px bg-sky-500"></span>
-                    Advanced Visualization Engine
-                </div>
-                <h1 class="text-6xl md:text-[10rem] font-black text-white leading-[0.9] tracking-tighter mb-20">
-                    TRANSFORMING <br/>
-                    COMPLEXITY <br/>
-                    INTO <span class="text-sky-500">CLARITY.</span>
-                </h1>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-20 pt-20 border-t border-sky-900/30">
-                    <div>
-                        <p class="text-xl leading-relaxed text-slate-400">Atlas is a data visualization studio that bridges the gap between raw datasets and intuitive human understanding through precision-engineered visual systems.</p>
-                    </div>
-                    <div class="flex flex-col gap-8">
-                        <div class="flex justify-between items-center border-b border-sky-900/30 pb-4">
-                            <span class="mono text-xs">01 / BIG DATA SYNC</span>
-                            <span class="text-sky-500 font-bold">READY</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-sky-900/30 pb-4">
-                            <span class="mono text-xs">02 / NEURAL MAPPING</span>
-                            <span class="text-sky-500 font-bold">READY</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-sky-900/30 pb-4">
-                            <span class="mono text-xs">03 / REAL-TIME ANALYSIS</span>
-                            <span class="text-sky-500 font-bold">READY</span>
-                        </div>
-                    </div>
+    <section class="hero">
+        <div class="grid-bg"></div>
+        <div class="hero-content">
+            <div class="badge">Advanced Visualization Engine</div>
+            <h1>Transforming Complexity <span class="accent">Into Clarity.</span></h1>
+            <p>Atlas is a scientific data visualization studio that bridges the gap between raw datasets and intuitive human understanding through precision-engineered visual systems.</p>
+            <div class="hero-buttons">
+                <a href="studio.html" class="btn-primary">Open Studio</a>
+                <a href="modules.html" class="btn-secondary">View Modules</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="tech-card">
+                <div class="tech-row"><span class="tech-label">01 / BIG DATA SYNC</span><span class="status">READY</span></div>
+                <div class="tech-row"><span class="tech-label">02 / NEURAL MAPPING</span><span class="status">READY</span></div>
+                <div class="tech-row"><span class="tech-label">03 / REAL-TIME ANALYSIS</span><span class="status">READY</span></div>
+                <div class="tech-row"><span class="tech-label">04 / GEOSPATIAL</span><span class="status active">ACTIVE</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Four Core <span class="accent">Modules</span></h2>
+                <p>Specialized visualization engines for every domain of science and research.</p>
+            </div>
+            <div class="grid-4">
+                <div class="card"><div class="mod-num">01</div><h3>Geospatial</h3><p>Mapping complex global trends with millisecond latency and satellite precision.</p></div>
+                <div class="card featured-card"><div class="mod-num">02</div><h3>Quantum</h3><p>Visualizing sub-atomic data streams in interactive 3D coordinate space.</p></div>
+                <div class="card"><div class="mod-num">03</div><h3>Biometric</h3><p>Decoding the human biological code in real-time with clinical accuracy.</p></div>
+                <div class="card"><div class="mod-num">04</div><h3>Financial</h3><p>Predicting market volatility through advanced neural modeling and pattern detection.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">Atlas<span>.Studio</span></div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a><a href="studio.html">Studio</a>
+                    <a href="modules.html">Modules</a><a href="docs.html">Docs</a>
                 </div>
             </div>
-        </section>
-
-        <section class="py-40 px-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="border-tech p-10 hover:bg-sky-500/5 transition-colors group">
-                    <div class="mono text-[10px] mb-8 text-sky-500">MODULE_01</div>
-                    <h3 class="text-xl font-bold text-white mb-4 uppercase">Geospatial</h3>
-                    <p class="text-sm text-slate-500">Mapping complex global trends with millisecond latency.</p>
-                </div>
-                <div class="border-tech p-10 bg-sky-500/10">
-                    <div class="mono text-[10px] mb-8 text-sky-500">MODULE_02</div>
-                    <h3 class="text-xl font-bold text-white mb-4 uppercase">Quantum</h3>
-                    <p class="text-sm text-slate-500">Visualizing sub-atomic data streams in 3D space.</p>
-                </div>
-                <div class="border-tech p-10 hover:bg-sky-500/5 transition-colors group">
-                    <div class="mono text-[10px] mb-8 text-sky-500">MODULE_03</div>
-                    <h3 class="text-xl font-bold text-white mb-4 uppercase">Biometric</h3>
-                    <p class="text-sm text-slate-500">Decoding the human biological code in real-time.</p>
-                </div>
-                <div class="border-tech p-10 hover:bg-sky-500/5 transition-colors group">
-                    <div class="mono text-[10px] mb-8 text-sky-500">MODULE_04</div>
-                    <h3 class="text-xl font-bold text-white mb-4 uppercase">Financial</h3>
-                    <p class="text-sm text-slate-500">Predicting market volatility through neural modeling.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="p-20 border-t border-sky-900/30 flex flex-col md:flex-row justify-between items-center gap-10">
-        <div class="mono text-[10px] text-sky-500/40 tracking-[0.5em] uppercase">Built by Atlas Scientific © 2026</div>
-        <div class="flex gap-10">
-            <button class="px-8 py-3 bg-white text-black font-black uppercase text-xs tracking-widest hover:bg-sky-500 hover:text-white transition-all">Download SDK</button>
-            <button class="px-8 py-3 border border-sky-900/30 text-white font-black uppercase text-xs tracking-widest hover:border-sky-500 transition-all">System Specs</button>
+            <div class="footer-bottom"><p>Built with ❤️ by <strong>Majid Ali</strong> · © 2026 Atlas DataViz</p></div>
         </div>
     </footer>
+    <script>function toggleMenu(){document.querySelector('.nav-links').classList.toggle('open');}</script>
 </body>
 </html>
